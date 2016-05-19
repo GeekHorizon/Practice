@@ -23,12 +23,21 @@ public class Calculator {
 	}
 	
 	public int calcSum2(String filePath) throws IOException {
-		return new CalculatorContext().context2(filePath, new CalculatorCallback2() {
-			public int doSomethingWithLine(String line, Integer value) {
+		return new CalculatorContext().context2(filePath, new CalculatorCallback2<Integer>() {
+			public Integer doSomethingWithLine(String line, Integer value) {
 				value += Integer.valueOf(line);
 				return value;
 			}
 		}, 0);
+	}
+	
+	public String concatenate(String filePath) throws IOException {
+		return new CalculatorContext().context2(filePath, new CalculatorCallback2<String>() {
+			public String doSomethingWithLine(String line, String value) {
+				value += line;
+				return value;
+			}
+		}, "");
 	}
 
 	public int calcMul(String filePath) throws IOException {
@@ -47,8 +56,8 @@ public class Calculator {
 	}
 	
 	public int calcMul2(String filePath) throws IOException {
-		return new CalculatorContext().context2(filePath, new CalculatorCallback2() {
-			public int doSomethingWithLine(String line, Integer value) {
+		return new CalculatorContext().context2(filePath, new CalculatorCallback2<Integer>() {
+			public Integer doSomethingWithLine(String line, Integer value) {
 				value *= Integer.valueOf(line);
 				return value;
 			}

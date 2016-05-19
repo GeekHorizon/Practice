@@ -27,14 +27,14 @@ public class CalculatorContext {
 		}
 	}
 	
-	public int context2(String filePath, CalculatorCallback2 callback, int initValue) throws IOException {
+	public <T>T context2(String filePath, CalculatorCallback2<T> callback, T initValue) throws IOException {
 		BufferedReader br = null;
 		
 		try {
 			br = new BufferedReader(new FileReader(filePath));
 			
 			String line = StringUtils.EMPTY;
-			int value = initValue;
+			T value = initValue;
 			
 			while ((line = br.readLine()) != null) {
 				value = callback.doSomethingWithLine(line, value);

@@ -30,6 +30,16 @@ public class CalculatorTest {
 	}
 	
 	@Test
+	public void test5() throws IOException {
+		Calculator calculator = new Calculator();
+		
+		String lines = calculator.concatenate(getClass().getResource("input.txt").getPath());
+		
+		assertThat(lines, is("1234"));
+		
+	}
+	
+	@Test
 	public void test2() throws IOException {
 		Calculator calculator = new Calculator();
 		

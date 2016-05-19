@@ -1,10 +1,5 @@
 package com.dasoulte.calc;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-
-public interface CalculatorCallback2 {
-
-	
-	int doSomethingWithLine(String line, Integer value);
+public interface CalculatorCallback2<T> {
+	T doSomethingWithLine(String line, T value);
 }
