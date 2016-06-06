@@ -1,9 +1,9 @@
 package com.dasolute.practice.first;
 
-import org.junit.Test;
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.matchers.JUnitMatchers.hasItem;
 import static org.junit.Assert.assertThat;
+
+import org.junit.Test;
 
 public class ThreeTest {
 	
