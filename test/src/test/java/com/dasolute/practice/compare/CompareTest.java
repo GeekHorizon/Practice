@@ -1,6 +1,9 @@
 package com.dasolute.practice.compare;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -8,13 +11,19 @@ import org.junit.Test;
 public class CompareTest {
 	
 	Compare[] compare = new Compare[4];
+	List<Compare> compareList = new ArrayList<Compare>();
 	
 	@Before
 	public void setUp() {
-		compare[0] = new Compare(1);
-		compare[1] = new Compare(2);
-		compare[2] = new Compare(3);
-		compare[3] = new Compare(4);
+		compare[0] = new Compare(3);
+		compare[1] = new Compare(6);
+		compare[2] = new Compare(4);
+		compare[3] = new Compare(2);
+		
+		compareList.add(new Compare(3));
+		compareList.add(new Compare(6));
+		compareList.add(new Compare(4));
+		compareList.add(new Compare(2));
 	}
 
 	/**
@@ -32,6 +41,15 @@ public class CompareTest {
 		Arrays.sort(compare);
 		
 		for(Compare item : compare) {
+			System.out.println(item);
+		}
+	}
+	
+	@Test
+	public void objectComparableTest2() {
+		Collections.sort(compareList);
+		
+		for(Compare item : compareList) {
 			System.out.println(item);
 		}
 	}
@@ -67,6 +85,15 @@ public class CompareTest {
 		Arrays.sort(compare, new ComparatorInterface());
 		
 		for(Compare item : compare) {
+			System.out.println(item);
+		}
+	}
+	
+	@Test
+	public void objectComparatorTest2() {
+		Collections.sort(compareList, new ComparatorInterface());
+		
+		for(Compare item : compareList) {
 			System.out.println(item);
 		}
 	}
