@@ -18,6 +18,16 @@ public class Calculator {
 
 
 
+
+
+
+
+
+
+
+
+
+
 	public int calcSum(String filePath) throws IOException {
 		
 		BufferedReader br = null;
